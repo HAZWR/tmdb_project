@@ -1,4 +1,4 @@
-import MovieCard from "@/components/MovieCard";
+import MovieCard from "@/components/Movie/MovieCard";
 import { getMovieById } from "@/services/tmdb.service";
 
 export default async function Page({ params }: { params: { slug: number } }) {

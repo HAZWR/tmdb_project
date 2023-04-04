@@ -1,14 +1,11 @@
-import MoviesSlider from "@/components/MoviesSlider";
+import MovieContainer from "@/components/Movie/MovieContainer";
 import { getPopularMovies } from "@/services/tmdb.service";
-
 import "keen-slider/keen-slider.min.css";
 
 export default async function Home() {
-  const movies = await getPopularMovies();
+  const movies = (await getPopularMovies()).splice(0, 10);
 
   return (
-    <div>
-      <MoviesSlider movies={movies.splice(0, 10)} />
-    </div>
+        <MovieContainer movies={movies}/>
   );
 }
